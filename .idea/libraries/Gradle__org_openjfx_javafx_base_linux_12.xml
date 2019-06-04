@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openjfx:javafx-base:linux:12">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/12/8c9190b3df3b153438886a73808e70525707eda0/javafx-base-12-linux.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/12/fd26e91311c3eac67fb63fd5ee728fb0a66e3cc7/javafx-base-12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
