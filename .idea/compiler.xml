@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="org.devteam.TraidingPlatform.main" target="12" />
+      <module name="org.devteam.TraidingPlatform.test" target="12" />
       <module name="TraidingPlatform.main" target="12" />
       <module name="TraidingPlatform.test" target="12" />
     </bytecodeTargetLevel>
