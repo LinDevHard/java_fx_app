@@ -1,39 +1,31 @@
 package org.devteam;
 
 import javafx.application.Application;
-import javafx.geometry.Orientation;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+import org.devteam.data.DataLoader;
 
 
-class MainApp extends Application {
+public class MainApp extends Application {
+    private static final String APP_NAME = "Trading Platform";
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("main_screen.fxml"));
+
+        Scene scene = new Scene(root);
+        DataLoader dt = new DataLoader();
+        dt.getChartActually("AAPL");
+        stage.setTitle(APP_NAME);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args){
         launch();
     }
 
-    @Override
-    public void init() throws Exception {
-        System.out.println("Init App");
-        super.init();
-    }
-
-
-    @Override
-    public void start(Stage stage) throws Exception {
-
-        FlowPane rootNode = new FlowPane(Orientation.VERTICAL, 0, 20);
-
-        Scene scene = new Scene(rootNode, 200, 200);
-
-        Label label = new Label("First application");
-        rootNode.getChildren().add(label);
-
-        stage.setTitle("Firs application on JavaFx");
-        stage.setScene(scene);
-        stage.show();
-
-    }
 }
+

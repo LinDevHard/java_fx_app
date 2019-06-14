@@ -1,9 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'eclipse'
     id 'org.openjfx.javafxplugin' version '0.0.7'
-    id 'org.beryx.jlink' version '2.9.4'
 }
 
 group 'org.devteam'
@@ -11,20 +9,8 @@ version '0.01'
 
 sourceCompatibility = 12
 
-eclipse {
-    classpath {
-        file {
-            whenMerged {
-                entries.findAll { it.properties.kind.equals('lib') }.each {
-                    it.entryAttributes['module'] = 'true'
-                }
-            }
-        }
-    }
-}
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -36,12 +22,10 @@ javafx {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'pl.zankowski:iextrading4j-all:3.1.0'
+    compile 'com.sun.activation:javax.activation:1.2.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
 }
 
-mainClassName= "$moduleName/org.devteam.MainApp"
+mainClassName= "org.devteam.MainApp"
 
-jlink {
-    launcher {
-        name = 'org.devteam.platformfx'
-    }
-}
