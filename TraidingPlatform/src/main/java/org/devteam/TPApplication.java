@@ -5,14 +5,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import org.devteam.view.SkeletonController;
 
 public class TPApplication extends Application {
     private static final String APP_NAME = "Trading Platform";
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("skeleton.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxml/skeleton.fxml"));
+        Parent root = fxmlLoader.load();
+        SkeletonController skeletonController = fxmlLoader.getController();
+        skeletonController.setMainStage(stage);
 
         Scene scene = new Scene(root);
         stage.setTitle(APP_NAME);
