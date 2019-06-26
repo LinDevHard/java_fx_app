@@ -1,0 +1,3 @@
+#!/bin/sh
+DIR="${0%/*}"
+"$DIR/java"  -m org.devteam.platformfx/org.devteam.MainApp  "$@"

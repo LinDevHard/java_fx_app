@@ -24,7 +24,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'pl.zankowski:iextrading4j-all:3.1.0'
     compile 'com.sun.activation:javax.activation:1.2.0'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
 }
 
 mainClassName= "org.devteam.TPApplication"
