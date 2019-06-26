@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<SplitPane dividerPositions="0.3076923076923077" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.devteam.view.SummaryController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TextField fx:id="textField" layoutX="-4.0" layoutY="21.0" promptText="Enter Stock Symbol" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="16.0" />
+            <Button fx:id="loadButton" layoutX="59.0" layoutY="52.0" mnemonicParsing="false" text="Load" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="423.0">
+         <children>
+            <Label fx:id="mEmptySummaryInfo" alignment="CENTER" layoutX="196.0" layoutY="183.0" text="Stock Summary Here" textAlignment="CENTER" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0" />
+            <Label fx:id="symbol" layoutX="33.0" layoutY="37.0" prefHeight="50.0" prefWidth="100.0" text="APPL" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Noto Serif Display Black" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="cmpName" layoutX="169.0" layoutY="52.0" text="Conpany Name" visible="false" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0">
+               <font>
+                  <Font name="Noto Serif Black" size="13.0" />
+               </font>
+            </Label>
+            <Separator layoutX="50.0" layoutY="91.0" prefWidth="200.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0" />
+            <Label fx:id="openLabel" layoutX="42.0" layoutY="84.0" text="Open" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0" />
+            <Label fx:id="closeLabel" layoutX="20.0" layoutY="125.0" text="Close" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="110.0" />
+            <Label fx:id="lowLabel" layoutX="20.0" layoutY="150.0" text="Low" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="140.0" />
+            <Label fx:id="highLabel" layoutX="20.0" layoutY="171.0" text="High" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="170.0" />
+            <Label fx:id="open" layoutX="158.0" layoutY="80.0" text="Label" visible="false" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="80.0" />
+            <Label fx:id="low" layoutX="120.0" layoutY="132.0" text="Label" visible="false" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="140.0" />
+            <Label fx:id="high" layoutX="120.0" layoutY="102.0" text="Label" visible="false" AnchorPane.topAnchor="170.0" />
+            <Label fx:id="close" layoutX="130.0" layoutY="150.0" text="Label" visible="false" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="110.0" />
+            <Label fx:id="changeLabel" layoutX="30.0" layoutY="90.0" text="Change" visible="false" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="80.0" />
+            <Label fx:id="volLabel" layoutX="30.0" layoutY="120.0" text="Volume" visible="false" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="110.0" />
+            <Label fx:id="mktLabel" layoutX="30.0" layoutY="150.0" text="Mkt Cap" visible="false" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="140.0" />
+            <Label fx:id="peLabel" layoutX="30.0" layoutY="180.0" text="P/E Ratio" visible="false" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="170.0" />
+            <Label fx:id="change" layoutX="130.0" layoutY="90.0" text="Label" visible="false" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="80.0" />
+            <Label fx:id="vol" layoutX="311.0" layoutY="110.0" text="Label" visible="false" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="110.0" />
+            <Label fx:id="mktCap" layoutX="130.0" layoutY="180.0" text="Label" visible="false" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="140.0" />
+            <Label fx:id="peRatio" layoutX="130.0" layoutY="120.0" text="Label" visible="false" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="170.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
