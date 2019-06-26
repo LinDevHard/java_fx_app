@@ -5,19 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.devteam.data.DataLoader;
 
 
-public class MainApp extends Application {
+public class TPApplication extends Application {
     private static final String APP_NAME = "Trading Platform";
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("main_screen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("skeleton.fxml"));
 
         Scene scene = new Scene(root);
-        DataLoader dt = new DataLoader();
-        dt.getChartActually("AAPL");
         stage.setTitle(APP_NAME);
         stage.setScene(scene);
         stage.show();
