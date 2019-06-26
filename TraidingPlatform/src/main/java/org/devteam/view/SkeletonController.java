@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.Tab;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -21,14 +22,14 @@ public class SkeletonController {
     @FXML
     private MenuBar menubar;
 
-    public void setMainStage(Stage mainStage) {
-        this.mainStage = mainStage;
-    }
+    @FXML
+    public Tab summary;
 
     @FXML
     private void initialize(){
         initLoader();
     }
+
     private void initLoader()  {
         try {
 
@@ -38,6 +39,10 @@ public class SkeletonController {
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    public void setMainStage(Stage mainStage) {
+        this.mainStage = mainStage;
     }
 
     @FXML
