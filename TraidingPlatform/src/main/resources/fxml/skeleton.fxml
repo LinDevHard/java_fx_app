@@ -28,7 +28,8 @@
               <tabs>
                 <Tab text="Summary"  fx:id="summary">
                     <fx:include source="summary.fxml"/> </Tab>
-                <Tab text="Chart" />
+                <Tab text="Chart" fx:id="chart">
+                    <fx:include source="chart.fxml"/> </Tab>
               </tabs>
             </TabPane>
          </center>
