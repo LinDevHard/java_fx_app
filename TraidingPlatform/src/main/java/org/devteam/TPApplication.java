@@ -19,6 +19,7 @@ public class TPApplication extends Application {
         skeletonController.setMainStage(stage);
 
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("/css/candleChartStyle.css");
         stage.setTitle(APP_NAME);
         stage.setScene(scene);
         stage.show();
