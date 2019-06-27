@@ -78,50 +78,34 @@ public class SummaryController {
         });
     }
 
-    private void loadData(String rsymbol) {
+    private void loadData(String symbol) {
         Quote response;
 
         try {
             //Long-term operation, needs its flow
-            response = data.getStockQuote(rsymbol);
+            response = data.getStockQuote(symbol);
         }catch (Exception e){
             //Todo: Rewrite this!
             e.printStackTrace();
             loadButton.setDisable(false);
+            setVisibleAll(false);
             mEmptySummaryInfo.setText("Symbol not found or alternative bug");
             mEmptySummaryInfo.setVisible(true);
             return;
         }
-
-        openLabel.setVisible(true);
-        closeLabel.setVisible(true);
-        lowLabel.setVisible(true);
-        highLabel.setVisible(true);
-        volLabel.setVisible(true);
-        changeLabel.setVisible(true);
-        peLabel.setVisible(true);
-        mktLabel.setVisible(true);
+        setVisibleAll(true);
 
         open.setText(response.getOpen().toString());
-        open.setVisible(true);
         high.setText(response.getHigh().toString());
-        high.setVisible(true);
         cmpName.setText(response.getCompanyName());
-        cmpName.setVisible(true);
-        symbol.setText(response.getSymbol());
-        symbol.setVisible(true);
+        this.symbol.setText(response.getSymbol());
         close.setText(response.getClose().toString());
-        close.setVisible(true);
         low.setText(response.getLow().toString());
-        low.setVisible(true);
         vol.setText(response.getLatestVolume().toString());
-        vol.setVisible(true);
         change.setText(response.getChange().toString());
-        change.setVisible(true);
         mktCap.setText(response.getMarketCap().toString());
-        mktCap.setVisible(true);
         peRatio.setText(response.getPeRatio().toString());
-        peRatio.setVisible(true);
+
 
     }
     //Low predicate
@@ -129,5 +113,26 @@ public class SummaryController {
         return textField.getLength() != 0;
     }
 
+    private void setVisibleAll(boolean isVisible){
+        openLabel.setVisible(isVisible);
+        closeLabel.setVisible(isVisible);
+        lowLabel.setVisible(isVisible);
+        highLabel.setVisible(isVisible);
+        volLabel.setVisible(isVisible);
+        changeLabel.setVisible(isVisible);
+        peLabel.setVisible(isVisible);
+        mktLabel.setVisible(isVisible);
+        open.setVisible(isVisible);
+        low.setVisible(isVisible);
+        close.setVisible(isVisible);
+        high.setVisible(isVisible);
+        peRatio.setVisible(isVisible);
+        mktCap.setVisible(isVisible);
+        change.setVisible(isVisible);
+        vol.setVisible(isVisible);
+        this.symbol.setVisible(isVisible);
+        cmpName.setVisible(isVisible);
+
+    }
 
 }
