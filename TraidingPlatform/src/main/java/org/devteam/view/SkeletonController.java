@@ -24,6 +24,8 @@ public class SkeletonController {
 
     @FXML
     public Tab summary;
+    @FXML
+    public Tab chart;
 
     @FXML
     private void initialize(){
