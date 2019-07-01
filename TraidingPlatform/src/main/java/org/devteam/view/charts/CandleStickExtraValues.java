@@ -11,7 +11,6 @@ public class CandleStickExtraValues {
         this.high = high;
         this.low = low;
         this.average = average;
-        //WTF What im do...
     }
 
 

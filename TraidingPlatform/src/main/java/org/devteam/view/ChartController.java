@@ -3,6 +3,7 @@ package org.devteam.view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.Pane;
@@ -27,7 +28,7 @@ public class ChartController {
 
     private void initCharts() {
         // x-axis:
-        final NumberAxis xAxis = new NumberAxis(0, loadedData.size(), 1);
+        final CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Day");
 
         // y-axis:
@@ -40,20 +41,20 @@ public class ChartController {
         bc.setTitle("Custom Candle Stick Chart");
 
         // add starting data
-        XYChart.Series<Number, Number> series = new XYChart.Series<Number, Number>();
+        XYChart.Series<String, Number> series = new XYChart.Series<String,Number>();
         int index  = 0;
         for (Chart data: loadedData) {
             index++;
             System.out.println(data.toString());
             series.getData().add(
-                    new XYChart.Data<Number, Number>(index, data.getOpen(), new CandleStickExtraValues(
+                    new XYChart.Data<String, Number>(data.getLabel(), data.getOpen(), new CandleStickExtraValues(
                             data.getClose().doubleValue(),
                             data.getHigh().doubleValue(),
                             data.getLow().doubleValue(),
                             (data.getHigh().doubleValue()+data.getLow().doubleValue()) /2))
             );
         }
-        ObservableList<XYChart.Series<Number, Number>> data = bc.getData();
+        ObservableList<XYChart.Series<String, Number>> data = bc.getData();
         if (data == null) {
             data = FXCollections.observableArrayList(series);
             bc.setData(data);
