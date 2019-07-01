@@ -3,10 +3,11 @@ package org.devteam.view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Side;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 import org.devteam.data.DataLoader;
 import org.devteam.data.ServerLoader;
 import org.devteam.view.charts.CandleStickChart;
@@ -17,7 +18,8 @@ import java.util.List;
 
 public class ChartController {
     @FXML
-    Pane mainPane;
+    AnchorPane mainPane;
+
     DataLoader client = new ServerLoader();
     List<Chart> loadedData = null;
 
@@ -29,17 +31,15 @@ public class ChartController {
     private void initCharts() {
         // x-axis:
         final CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Day");
 
         // y-axis:
         final NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Price");
         yAxis.setForceZeroInRange(false);
+        yAxis.setSide(Side.RIGHT);
 
         // chart:
         final CandleStickChart bc = new CandleStickChart(xAxis, yAxis);
-        bc.setTitle("Custom Candle Stick Chart");
-
+        bc.setLegendVisible(false);
         // add starting data
         XYChart.Series<String, Number> series = new XYChart.Series<String,Number>();
         int index  = 0;
@@ -61,6 +61,12 @@ public class ChartController {
         } else {
             bc.getData().add(series);
         }
+        // stretching chart
+        mainPane.setTopAnchor(bc, 5.);
+        mainPane.setLeftAnchor(bc, 5.);
+        mainPane.setRightAnchor(bc, 5.);
+        mainPane.setBottomAnchor(bc, 50.);
         mainPane.getChildren().addAll(bc);
+
     }
 }
